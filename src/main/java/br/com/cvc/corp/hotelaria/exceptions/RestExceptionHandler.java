@@ -28,27 +28,27 @@ import java.util.List;
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler({ValidacaoException.class})
+    @ExceptionHandler({ValidationException.class})
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<?> validacaoException(final ValidacaoException ex, final WebRequest request) {
+    public ResponseEntity<?> validacaoException(final ValidationException ex, final WebRequest request) {
         return ex.buildResponse();
     }
 
-    @ExceptionHandler(value = {SemResultadoException.class})
+    @ExceptionHandler(value = {NotFoundException.class})
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<?> semResultadoException(final SemResultadoException ex) {
+    public ResponseEntity<?> semResultadoException(final NotFoundException ex) {
         return ex.buildResponse();
     }
 
-    @ExceptionHandler(value = {InfraestruturaException.class})
+    @ExceptionHandler(value = {InfraEstrutureException.class})
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<?> infraestruturaException(final InfraestruturaException ex) {
+    public ResponseEntity<?> infraestruturaException(final InfraEstrutureException ex) {
         return ex.buildResponse();
     }
 
     @ExceptionHandler(value = {BaseException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<?> jornadaException(final InfraestruturaException ex) {
+    public ResponseEntity<?> jornadaException(final InfraEstrutureException ex) {
         return ex.buildResponse();
     }
 

@@ -10,6 +10,6 @@ spring:
     sampler:
       probability: 1.0
 
-urlAvail: https://cvcbackendhotel.herokuapp.com/hotels/avail/ # 
+urlBrokerAvail: https://cvcbackendhotel.herokuapp.com/hotels/avail/ # 
 
-urlHotels: https://cvcbackendhotel.herokuapp.com/hotels/ # 
+urlBrokerHotels: https://cvcbackendhotel.herokuapp.com/hotels/ # 

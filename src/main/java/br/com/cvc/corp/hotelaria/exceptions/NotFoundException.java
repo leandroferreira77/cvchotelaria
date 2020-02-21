@@ -2,15 +2,15 @@ package br.com.cvc.corp.hotelaria.exceptions;
 
 import org.springframework.http.HttpStatus;
 
-public class SemResultadoException extends BaseException {
+public class NotFoundException extends BaseException {
 
     private static final long serialVersionUID = 1L;
 
-    public SemResultadoException() {
+    public NotFoundException() {
         super();
     }
 
-    public SemResultadoException(final String message) {
+    public NotFoundException(final String message) {
         super(message);
     }
 

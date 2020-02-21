@@ -10,27 +10,27 @@ import static java.util.Objects.nonNull;
 
 import br.com.cvc.corp.hotelaria.dto.DetalheErroDto;
 
-public class ValidacaoException extends BaseException {
+public class ValidationException extends BaseException {
 
     private static final long serialVersionUID = -4570655994360213008L;
     
     private List<DetalheErroDto> erros;
 
-    public ValidacaoException(final String message) {
+    public ValidationException(final String message) {
         super(message);
     }
 
-    public ValidacaoException(final String message, final List<DetalheErroDto> erros) {
+    public ValidationException(final String message, final List<DetalheErroDto> erros) {
         super(message);
         this.erros = erros;
     }
 
-    public ValidacaoException(final List<DetalheErroDto> erros) {
+    public ValidationException(final List<DetalheErroDto> erros) {
         super();
         this.erros = erros;
     }
 
-    public ValidacaoException(DetalheErroDto... erros) {
+    public ValidationException(DetalheErroDto... erros) {
         this.erros = nonNull(erros) ? asList(erros) : null;
     }
 

@@ -3,23 +3,23 @@ package br.com.cvc.corp.hotelaria.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import br.com.cvc.corp.hotelaria.converter.LocalDateDeserializer;
+import br.com.cvc.corp.hotelaria.converter.LocalDateSerializer;
 
 public class Travel {
 
+    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonFormat(pattern = "dd/MM/yyyy", locale = "pt_BR")
-    @DateTimeFormat(pattern = "dd/MM/yyyy", iso = DateTimeFormat.ISO.DATE)
-	private LocalDate checkin;
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate checkin;
 
+    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonFormat(pattern = "dd/MM/yyyy", locale = "pt_BR")
-    @DateTimeFormat(pattern = "dd/MM/yyyy", iso = DateTimeFormat.ISO.DATE)
+    @JsonSerialize(using = LocalDateSerializer.class)
 	private LocalDate checkout;
 	
 	private Integer adults;

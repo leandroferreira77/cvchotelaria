@@ -1,4 +1,4 @@
-package br.com.cvc.corp.hotelaria.service;
+package br.com.cvc.corp.hotelaria.client.broker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +19,10 @@ public class BrokerServiceClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${urlAvail}")
+    @Value("${urlBrokerAvail}")
     private String urlAvail;
 
-    @Value("${urlHotels}")
+    @Value("${urlBrokerHotels}")
     private String urlHotels;
 
     public List<Hotel> hotelsAvails(Integer codeCity) {
